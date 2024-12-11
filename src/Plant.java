@@ -1,6 +1,7 @@
+import java.io.Serializable;
 import java.time.LocalDate;
 
-public class Plant {
+public class Plant implements Serializable, Comparable<Plant> {
     private String name;
     private String notes;
     private LocalDate planted;
@@ -132,6 +133,10 @@ public void doWateringNow() {
 }
 
 
+    @Override
+    public int compareTo(Plant other) {
+        return this.name.compareTo(other.name);
+    }
 }
 
 
